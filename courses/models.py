@@ -27,8 +27,10 @@ class CourseChapter(models.Model):
 class CourseConcept(models.Model):
     name = models.CharField(max_length=40)
     chapter = models.ForeignKey(CourseChapter, related_name='concepts')
+    weightage = models.IntegerField(default=0.5)
 
     def __unicode__(self):
         return unicode(self.name)
+
 
 
